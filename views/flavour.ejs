@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy™</title>
+    <%- include("./partials/header.ejs") %>
+
+</head>
+<body>
+  <%- include("./partials/nav.ejs") %>
+     
+
+  <div class="wrapper">
+    <form action="/new" method="POST">
+    <label for="flavour">Create Flavour</label>
+    <input type="text" id="flavour" name="flavour" required>
+    <button>Create!</button>
+    </form>
+        </div>
+
+    <form action="/vote/:id" method="PUT" name="vote" value="FLAVOURS">
+        
+          <% flavour.forEach(flave => { %> 
+
+            <h3 class="flavour"><%= flave.flavour %> </h3>
+            <p class="vote"><%= flave.vote %> </p>
+            <button>VOTE</button>
+            <% }) %> 
+          
+          
+    </form>
+
+
+   
+</body>
+<%- include("./partials/footer.ejs") %>
+</html>
